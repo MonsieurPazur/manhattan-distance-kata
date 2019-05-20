@@ -17,6 +17,9 @@ class Grid
      */
     private $path;
 
+    /**
+     * Grid constructor.
+     */
     public function __construct()
     {
         $this->path = [];
