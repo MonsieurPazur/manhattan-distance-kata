@@ -59,5 +59,25 @@ class ManhattanDistanceTest extends TestCase
             'end' => [0, 0],
             'expected' => 0
         ];
+        yield 'neighbouring points' => [
+            'start' => [0, 1],
+            'end' => [0, 0],
+            'expected' => 1
+        ];
+        yield 'different x' => [
+            'start' => [-6, 2],
+            'end' => [2, 2],
+            'expected' => 8
+        ];
+        yield 'different y' => [
+            'start' => [-1, -3],
+            'end' => [-1, 11],
+            'expected' => 14
+        ];
+        yield 'both coords different' => [
+            'start' => [2, -1],
+            'end' => [-3, 4],
+            'expected' => 10
+        ];
     }
 }

@@ -13,6 +13,16 @@ namespace App;
 class Grid
 {
     /**
+     * @var Point[] $path array of Points from start to end
+     */
+    private $path;
+
+    public function __construct()
+    {
+        $this->path = [];
+    }
+
+    /**
      * Gets manhattan distance between two given points.
      *
      * @param Point $start point from which we calculate distance
@@ -22,6 +32,10 @@ class Grid
      */
     public function manhattanDistance(Point $start, Point $end): int
     {
-        return 0;
+        $this->path = [];
+        $start->createPathTowards($end, $this->path);
+
+        // Final distance is a count of all points on the path (minus starting one).
+        return count($this->path) - 1;
     }
 }
